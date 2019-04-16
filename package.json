@@ -1,0 +1,6 @@
+{
+  "name": "@webgpu/shaderc",
+  "version": "0.0.2",
+  "main": "dist/index",
+  "license": "Apache-2.0"
+}
