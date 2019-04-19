@@ -6,5 +6,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/kainino0x/-webgpu-shaderc.git"
-  }
+  },
+  "homepage": "https://github.com/kainino0x/-webgpu-shaderc"
 }

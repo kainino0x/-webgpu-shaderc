@@ -10,6 +10,7 @@ declare class Compiler {
 
 declare class CompileOptions {
     constructor();
+    SetOptimizationLevel(level: OptimizationLevel): void;
 }
 
 declare interface ShaderKind {}
@@ -19,16 +20,24 @@ declare interface ShaderKindEnum {
     readonly compute: ShaderKind;
 }
 
+declare interface OptimizationLevel {}
+declare interface OptimizationLevelEnum {
+    readonly zero: OptimizationLevel;
+    readonly size: OptimizationLevel;
+    readonly performance: OptimizationLevel;
+}
+
 declare class SpvCompilationResult {
     GetErrorMessage(): string;
     GetBinary(): Uint32Array;
 }
 
 declare interface Shaderc {
-    readonly Compiler: typeof Compiler;
-    readonly CompileOptions: typeof CompileOptions;
-    readonly SpvCompilationResult: typeof SpvCompilationResult;
+    readonly Compiler: { new(): Compiler };
+    readonly CompileOptions: { new(): CompileOptions };
+    readonly SpvCompilationResult: { new(): SpvCompilationResult };
     readonly shader_kind: ShaderKindEnum;
+    readonly optimization_level: OptimizationLevelEnum;
 }
 
 export const instantiate: () => Promise<Shaderc>;
