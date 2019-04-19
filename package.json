@@ -2,5 +2,9 @@
   "name": "@webgpu/shaderc",
   "version": "0.0.4",
   "main": "dist/index",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kainino0x/-webgpu-shaderc.git"
+  }
 }
