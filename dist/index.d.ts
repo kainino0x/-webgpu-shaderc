@@ -15,28 +15,36 @@ declare class CompileOptions {
     SetTargetEnvironment(target: TargetEnv, version: number): void;
 }
 
-declare interface ShaderKind {}
+declare interface ShaderKind {
+    readonly value: number;
+}
 declare interface ShaderKindEnum {
     readonly fragment: ShaderKind;
     readonly vertex: ShaderKind;
     readonly compute: ShaderKind;
 }
 
-declare interface OptimizationLevel {}
+declare interface OptimizationLevel {
+    readonly value: number;
+}
 declare interface OptimizationLevelEnum {
     readonly zero: OptimizationLevel;
     readonly size: OptimizationLevel;
     readonly performance: OptimizationLevel;
 }
 
-declare interface TargetEnv {}
+declare interface TargetEnv {
+    readonly value: number;
+}
 declare interface TargetEnvEnum {
     readonly vulkan: TargetEnv;
     readonly opengl: TargetEnv;
     readonly opengl_compat: TargetEnv;
 }
 
-declare interface EnvVersion {}
+declare interface EnvVersion {
+    readonly value: number;
+}
 declare interface EnvVersionEnum {
     readonly vulkan_1_0: EnvVersion;
     readonly vulkan_1_1: EnvVersion;
