@@ -10,7 +10,9 @@ declare class Compiler {
 
 declare class CompileOptions {
     constructor();
+    SetGenerateDebugInfo(): void;
     SetOptimizationLevel(level: OptimizationLevel): void;
+    SetTargetEnvironment(target: TargetEnv, version: number): void;
 }
 
 declare interface ShaderKind {}
@@ -27,6 +29,20 @@ declare interface OptimizationLevelEnum {
     readonly performance: OptimizationLevel;
 }
 
+declare interface TargetEnv {}
+declare interface TargetEnvEnum {
+    readonly vulkan: TargetEnv;
+    readonly opengl: TargetEnv;
+    readonly opengl_compat: TargetEnv;
+}
+
+declare interface EnvVersion {}
+declare interface EnvVersionEnum {
+    readonly vulkan_1_0: EnvVersion;
+    readonly vulkan_1_1: EnvVersion;
+    readonly opengl_4_5: EnvVersion;
+}
+
 declare class SpvCompilationResult {
     GetErrorMessage(): string;
     GetBinary(): Uint32Array;
@@ -38,6 +54,8 @@ declare interface Shaderc {
     readonly SpvCompilationResult: { new(): SpvCompilationResult };
     readonly shader_kind: ShaderKindEnum;
     readonly optimization_level: OptimizationLevelEnum;
+    readonly target_env: TargetEnvEnum;
+    readonly env_version: EnvVersionEnum;
 }
 
 export const instantiate: () => Promise<Shaderc>;
