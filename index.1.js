@@ -1,3 +1,9 @@
 module.exports = {};
 module.exports.instantiate = () => {
-  const wasmData = 'data:application/wasm;base64,\
+  const Module = {};
+  const promise = new Promise(res => {
+    Module.onRuntimeInitialized = () => {
+      res(Module);
+    };
+  });
+  {

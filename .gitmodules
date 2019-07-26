@@ -1,0 +1,3 @@
+[submodule "shaderc"]
+	path = shaderc
+	url = https://github.com/kainino0x/shaderc

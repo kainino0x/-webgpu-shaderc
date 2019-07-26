@@ -1,12 +1,3 @@
-';
-  return fetch(wasmData).then(res => res.arrayBuffer()).then(fromBinary);
+  }
+  return promise;
 };
-
-const fromBinary = (wasmBinary) => {
-  const Module = { wasmBinary };
-  const promise = new Promise(res => {
-    Module.onRuntimeInitialized = () => {
-      res(Module);
-    };
-  });
-  {
